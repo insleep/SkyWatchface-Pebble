@@ -7,7 +7,7 @@ TextLayer *date_layer;
 TextLayer *day_layer;
 TextLayer *battery_layer;
 TextLayer *bt_layer;
-TextLayer *black_layer; // Not a text layer, but doesn't matter
+TextLayer *black_layer; // Technically not a text layer, but it doesn't *really* matter
 
 static void handle_bt(bool connected) {
   text_layer_set_text(bt_layer, connected ? "connected" : "disconnected");
@@ -155,8 +155,6 @@ void handle_init(void) {
     text_layer_set_text_alignment(battery_layer, GTextAlignmentRight);
     text_layer_set_text(battery_layer, "charging");
   #endif
-  
-  
   
   time_t now = time(NULL);
   handle_timechanges(localtime(&now), MINUTE_UNIT);
